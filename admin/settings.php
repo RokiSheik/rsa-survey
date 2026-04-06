@@ -63,8 +63,12 @@ $current_page = 'settings';
     </style>
 </head>
 <body class="bg-gray-100 flex min-h-screen">
-    <!-- Sidebar (Same as dashboard) -->
-    <aside class="w-72 bg-slate-900 text-white flex flex-col fixed h-full z-50">
+    <button id="mobile-toggle" class="lg:hidden fixed top-6 left-6 z-[60] bg-slate-900 text-white p-3 rounded-xl shadow-xl">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-72 bg-slate-900 text-white flex flex-col fixed h-full z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
         <div class="px-6 py-8 flex items-center space-x-3 mb-6">
             <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center font-bold text-xl text-white">R</div>
             <div>
@@ -94,7 +98,7 @@ $current_page = 'settings';
         </div>
     </aside>
 
-    <main class="flex-1 ml-72 p-10 min-h-screen">
+    <main class="flex-1 lg:ml-72 p-6 lg:p-10 min-h-screen">
         <header class="mb-10">
             <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">System Configuration</h2>
             <p class="text-slate-500 font-medium mt-1">Manage branding and identity for your public application form.</p>
@@ -148,5 +152,13 @@ $current_page = 'settings';
             </form>
         </div>
     </main>
+    <script>
+        // Mobile Sidebar Toggle
+        const toggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
 </body>
 </html>

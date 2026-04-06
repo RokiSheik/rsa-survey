@@ -60,6 +60,16 @@ $sql = "CREATE TABLE IF NOT EXISTS submissions (
     office_godown VARCHAR(255),
     any_other_business VARCHAR(255),
     turnover VARCHAR(255),
+    educational_qualification VARCHAR(255),
+    prior_experience VARCHAR(255),
+    experience_duration VARCHAR(255),
+    godown_space VARCHAR(255),
+    investment_capacity VARCHAR(255),
+    sales_staff VARCHAR(255),
+    service_staff VARCHAR(255),
+    hear_about_us VARCHAR(255),
+    why_join VARCHAR(255),
+    expected_launch VARCHAR(255),
     product_interest TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";

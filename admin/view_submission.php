@@ -32,8 +32,12 @@ $current_page = 'submissions';
     </style>
 </head>
 <body class="bg-gray-50 flex min-h-screen">
+    <button id="mobile-toggle" class="lg:hidden fixed top-6 left-6 z-[60] bg-slate-900 text-white p-3 rounded-xl shadow-xl">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+
     <!-- Sidebar -->
-    <aside class="w-72 bg-slate-900 text-white flex flex-col fixed h-full z-50">
+    <aside id="sidebar" class="w-72 bg-slate-900 text-white flex flex-col fixed h-full z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
         <div class="px-6 py-8 flex items-center space-x-3 mb-6">
             <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center font-bold text-xl text-white">R</div>
             <div>
@@ -63,7 +67,7 @@ $current_page = 'submissions';
         </div>
     </aside>
 
-    <main class="flex-1 ml-72 p-10 min-h-screen">
+    <main class="flex-1 lg:ml-72 p-6 lg:p-10 min-h-screen">
         <header class="flex justify-between items-center mb-10">
             <div>
                 <nav class="flex text-sm text-slate-400 font-bold uppercase tracking-widest mb-4">
@@ -86,146 +90,79 @@ $current_page = 'submissions';
             </div>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <!-- Basic Information Card -->
+        <div class="w-full space-y-10">
+            <!-- Unified Simple View -->
             <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
-                <div class="px-8 py-6 border-b border-slate-50 bg-slate-50/50 flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 tracking-tight">Owner Information</h3>
+                <div class="bg-slate-50/50 px-8 py-4 border-b border-slate-100">
+                    <h3 class="font-bold text-slate-600 flex items-center space-x-2">
+                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        <span>Full Application Data (29 Questions)</span>
+                    </h3>
                 </div>
                 <div class="p-8 space-y-6">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">2. Owner Name</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['owner_name']); ?></p>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">5. Email Id</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['email']); ?></p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">3. Personal Cell No.</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['personal_phone']); ?></p>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">4. Office Cell No.</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['office_phone'] ?: 'N/A'); ?></p>
-                        </div>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">6. Address (City/State)</p>
-                        <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['city_state']); ?> (7. Pin: <?php echo htmlspecialchars($data['pin_code']); ?>)</p>
-                    </div>
-                </div>
-            </div>
+                    <?php 
+                    $fields = [
+                        '1. Firm Name' => $data['firm_name'],
+                        '2. Owner Name' => $data['owner_name'],
+                        '3. Personal Cell No.' => $data['personal_phone'],
+                        '4. Office Cell No.' => $data['office_phone'] ?: 'N/A',
+                        '5. Email Id' => $data['email'],
+                        '6. Address (City/State)' => $data['city_state'],
+                        '7. Pin Code' => $data['pin_code'],
+                        '8. GST No.' => $data['gst_no'] ?: 'N/A',
+                        '9. PAN No.' => $data['pan_no'],
+                        '10. Educational Qualification' => $data['educational_qualification'] ?: 'N/A',
+                        '11. Nature of Business' => $data['nature_of_business'],
+                        '12. Monthly Sale' => $data['monthly_sale'],
+                        '13. Years in Business' => $data['years_in_business'],
+                        '14. No. of Employees' => $data['no_employee'],
+                        '15. Prior Experience' => $data['prior_experience'] ?: 'No',
+                        '16. Experience Duration' => $data['experience_duration'] ?: 'N/A',
+                        '17. Field Experience' => $data['experience'],
+                        '18. Area Coverage' => $data['area_covering'] ?: 'Not Specified',
+                        '19. Office/Godown Facility' => $data['office_godown'],
+                        '20. Godown Space (Sq Ft)' => $data['godown_space'] ?: 'N/A',
+                        '21. Any Other Business' => $data['any_other_business'] ?: 'None',
+                        '22. Monthly Turnover' => $data['turnover'] ?: 'N/A',
+                        '23. Monthly Investment Capacity' => $data['investment_capacity'] ?: 'N/A',
+                        '24. Sales Staff Count' => $data['sales_staff'],
+                        '25. Service Staff Count' => $data['service_staff'],
+                        '26. How did you hear about us?' => $data['hear_about_us'],
+                        '27. Why RSA Dealership?' => $data['why_join'],
+                        '28. Expected Launch Date' => $data['expected_launch'],
+                    ];
 
-            <!-- Business Information Card -->
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
-                <div class="px-8 py-6 border-b border-slate-50 bg-slate-50/50 flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 tracking-tight">Business Profile</h3>
-                </div>
-                <div class="p-8 space-y-6">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">10. Nature of Business</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['nature_of_business']); ?></p>
+                    foreach($fields as $label => $val):
+                    ?>
+                        <div class="border-b border-slate-50 pb-4">
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1"><?php echo $label; ?></p>
+                            <p class="text-slate-800 font-semibold"><?php echo htmlspecialchars($val); ?></p>
                         </div>
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">11. Monthly Sale</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['monthly_sale']); ?></p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">12. Years in Business</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['years_in_business']); ?> Years</p>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">13. No. of Employees</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['no_employee']); ?></p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">8. GST No.</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['gst_no'] ?: 'N/A'); ?></p>
-                        </div>
-                        <div>
-                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">9. PAN No.</p>
-                            <p class="text-slate-800 font-bold"><?php echo htmlspecialchars($data['pan_no']); ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <?php endforeach; ?>
 
-            <!-- Logistics & Experience -->
-            <div class="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden lg:col-span-2">
-                <div class="px-8 py-6 border-b border-slate-50 bg-slate-50/50 flex items-center space-x-3">
-                    <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center text-green-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 9m0 11V9m0 0L9 7"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-800 tracking-tight">Logistics & Market Expertise</h3>
-                </div>
-                <div class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">15. Area Coverage</p>
-                        <p class="text-slate-800 font-bold bg-slate-50 p-4 rounded-2xl border border-slate-100"><?php echo htmlspecialchars($data['area_covering'] ?: 'Not Specified'); ?></p>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">16. Office / Godown Facility</p>
-                        <div class="flex items-center space-x-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-                             <?php if ($data['office_godown'] == 'Yes'): ?>
-                                <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
-                                <span class="text-slate-800 font-extrabold uppercase tracking-widest">Available</span>
-                             <?php else: ?>
-                                <span class="w-3 h-3 bg-red-500 rounded-full"></span>
-                                <span class="text-slate-800 font-extrabold uppercase tracking-widest text-slate-400">Not Available</span>
-                             <?php endif; ?>
+                    <div class="pt-4">
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">29. Products of Interest</p>
+                        <div class="flex flex-wrap gap-2">
+                            <?php 
+                            $prods = explode(', ', $data['product_interest']);
+                            foreach($prods as $p):
+                                if($p != 'None Selected'):
+                            ?>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-200"><?php echo htmlspecialchars($p); ?></span>
+                            <?php endif; endforeach; ?>
                         </div>
                     </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Existing Brands Dealing in</p>
-                        <p class="text-slate-800 font-bold bg-slate-50 p-4 rounded-2xl border border-slate-100"><?php echo htmlspecialchars($data['existing_brand_dealer'] ?: 'None'); ?></p>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">14. Field Experience</p>
-                        <p class="text-slate-800 font-bold bg-slate-50 p-4 rounded-2xl border border-slate-100"><?php echo htmlspecialchars($data['experience'] ?: 'N/A'); ?></p>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">18. Monthly Turnover</p>
-                        <p class="text-slate-800 font-bold bg-slate-50 p-4 rounded-2xl border border-slate-100"><?php echo htmlspecialchars($data['turnover'] ?: 'N/A'); ?></p>
-                    </div>
-                </div>
-                 <div class="p-8 border-t border-slate-50">
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">19. Products of Interest</p>
-                    <div class="flex flex-wrap gap-2">
-                        <?php 
-                        $prods = explode(', ', $data['product_interest']);
-                        foreach($prods as $p):
-                            if($p != 'None Selected'):
-                        ?>
-                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-200"><?php echo htmlspecialchars($p); ?></span>
-                        <?php 
-                            else:
-                                echo '<span class="text-slate-400 italic text-sm">No products selected</span>';
-                            endif;
-                        endforeach; 
-                        ?>
-                    </div>
-                </div>
-                 <div class="p-8 border-t border-slate-50">
-                    <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">17. Any Other Business</p>
-                    <p class="text-slate-800 font-medium italic"><?php echo htmlspecialchars($data['any_other_business'] ?: 'No other business reported.'); ?></p>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+        // Mobile Sidebar Toggle
+        const toggle = document.getElementById('mobile-toggle');
+        const sidebar = document.getElementById('sidebar');
+        toggle.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+    </script>
 </body>
 </html><?php $conn->close(); ?>
