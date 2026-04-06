@@ -87,7 +87,7 @@ $current_page = 'dashboard';
             <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-xl transition-all border-b-4 border-b-green-500">
                 <div class="flex justify-between items-center relative z-10">
                     <div>
-                        <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Total Submissions</p>
+                        <p class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-2">Total Survey Entries</p>
                         <h3 class="text-4xl font-black text-slate-800"><?php echo number_format($total_submissions); ?></h3>
                     </div>
                     <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
