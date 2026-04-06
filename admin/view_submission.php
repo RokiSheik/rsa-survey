@@ -75,7 +75,7 @@ $current_page = 'submissions';
                     <span class="mx-2">&bull;</span>
                     <span class="text-slate-800">Application Details</span>
                 </nav>
-                <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight"><?php echo htmlspecialchars($data['firm_name']); ?></h2>
+                <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight"><?php echo htmlspecialchars($data['outlet_name']); ?></h2>
                 <div class="flex items-center space-x-4 mt-2">
                     <span class="bg-green-100 text-green-700 font-bold px-3 py-1 rounded-lg text-xs uppercase"><?php echo date('F d, Y', strtotime($data['created_at'])); ?></span>
                     <span class="text-slate-400 text-sm font-medium">Ref ID: #<?php echo str_pad($data['id'], 6, '0', STR_PAD_LEFT); ?></span>
@@ -96,40 +96,41 @@ $current_page = 'submissions';
                 <div class="bg-slate-50/50 px-8 py-4 border-b border-slate-100">
                     <h3 class="font-bold text-slate-600 flex items-center space-x-2">
                         <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                        <span>Full Application Data (29 Questions)</span>
+                        <span>Full Survey Data (29 Questions)</span>
                     </h3>
                 </div>
                 <div class="p-8 space-y-6">
                     <?php 
                     $fields = [
-                        '1. Firm Name' => $data['firm_name'],
-                        '2. Owner Name' => $data['owner_name'],
-                        '3. Personal Cell No.' => $data['personal_phone'],
-                        '4. Office Cell No.' => $data['office_phone'] ?: 'N/A',
-                        '5. Email Id' => $data['email'],
-                        '6. Address (City/State)' => $data['city_state'],
-                        '7. Pin Code' => $data['pin_code'],
-                        '8. GST No.' => $data['gst_no'] ?: 'N/A',
-                        '9. PAN No.' => $data['pan_no'],
-                        '10. Educational Qualification' => $data['educational_qualification'] ?: 'N/A',
-                        '11. Nature of Business' => $data['nature_of_business'],
-                        '12. Monthly Sale' => $data['monthly_sale'],
-                        '13. Years in Business' => $data['years_in_business'],
-                        '14. No. of Employees' => $data['no_employee'],
-                        '15. Prior Experience' => $data['prior_experience'] ?: 'No',
-                        '16. Experience Duration' => $data['experience_duration'] ?: 'N/A',
-                        '17. Field Experience' => $data['experience'],
-                        '18. Area Coverage' => $data['area_covering'] ?: 'Not Specified',
-                        '19. Office/Godown Facility' => $data['office_godown'],
-                        '20. Godown Space (Sq Ft)' => $data['godown_space'] ?: 'N/A',
-                        '21. Any Other Business' => $data['any_other_business'] ?: 'None',
-                        '22. Monthly Turnover' => $data['turnover'] ?: 'N/A',
-                        '23. Monthly Investment Capacity' => $data['investment_capacity'] ?: 'N/A',
-                        '24. Sales Staff Count' => $data['sales_staff'],
-                        '25. Service Staff Count' => $data['service_staff'],
-                        '26. How did you hear about us?' => $data['hear_about_us'],
-                        '27. Why RSA Dealership?' => $data['why_join'],
-                        '28. Expected Launch Date' => $data['expected_launch'],
+                        '1. Name of Wing' => $data['name_of_wing'],
+                        '2. Name of Division' => $data['division_name'],
+                        '3. Name of Territory' => $data['territory_name'],
+                        '4. Name of Zone' => $data['zone_name'],
+                        '5. Code of Zone' => $data['zone_code'],
+                        '6. Route Name' => $data['route_name'],
+                        '7. Route Code' => $data['route_code'],
+                        '8. Outlet Name' => $data['outlet_name'],
+                        '9. Outlet Code' => $data['outlet_code'],
+                        '10. Retailer Name' => $data['retailer_name'],
+                        '11. Retailer Number' => $data['retailer_number'],
+                        '12. Surveyor Name' => $data['surveyor_name'],
+                        '13. Visit Date' => $data['visit_date'],
+                        '14. ADS 10 Taka Plus (Sticks)' => $data['ads_10taka_plus'],
+                        '15. ADS Slim Cigarette (Sticks)' => $data['ads_slim_cigarette'],
+                        '16. ADS Prime Cigarette (Sticks)' => $data['ads_prime_cigarette'],
+                        '17. ADS Mango Cigarette (Sticks)' => $data['ads_mango_cigarette'],
+                        '18. Availability (Inventory) - Prime' => $data['availability_prime'],
+                        '19. Availability (Inventory) - Mango' => $data['availability_mango'],
+                        '20. Visibility of Prime' => $data['visibility_prime'],
+                        '21. Visibility of Mango' => $data['visibility_mango'],
+                        '22. Buying Price of Prime (BDT/Pack)' => $data['buying_price_prime'],
+                        '23. Buying Price of Mango (BDT/Pack)' => $data['buying_price_mango'],
+                        '24. Selling Price per stick - Prime' => $data['selling_price_prime'],
+                        '25. Selling Price per stick - Mango' => $data['selling_price_mango'],
+                        '26. Is there Trade Scheme?' => $data['trade_scheme'],
+                        '27. Purchase Time' => $data['purchase_time'],
+                        '28. Feedback of Prime' => $data['feedback_prime'],
+                        '29. Feedback of Mango' => $data['feedback_mango'],
                     ];
 
                     foreach($fields as $label => $val):
@@ -139,19 +140,6 @@ $current_page = 'submissions';
                             <p class="text-slate-800 font-semibold"><?php echo htmlspecialchars($val); ?></p>
                         </div>
                     <?php endforeach; ?>
-
-                    <div class="pt-4">
-                        <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">29. Products of Interest</p>
-                        <div class="flex flex-wrap gap-2">
-                            <?php 
-                            $prods = explode(', ', $data['product_interest']);
-                            foreach($prods as $p):
-                                if($p != 'None Selected'):
-                            ?>
-                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-200"><?php echo htmlspecialchars($p); ?></span>
-                            <?php endif; endforeach; ?>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

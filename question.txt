@@ -1,0 +1,81 @@
+1) Name of Wing
+Field Type: Text input
+2) Name of Division
+Field Type: Text input
+3) Name of Territory
+Field Type: Text input
+4) Name of Zone
+Field Type: Text input
+5) Code of Zone
+Field Type: Text input
+6) Route Name
+Field Type: Text input
+7) Route Code
+Field Type: Text input
+8) Outlet Name
+Field Type: Text input
+9) Outlet Code
+Field Type: Text input
+10) Retailer Name
+Field Type: Text input
+11) Retailer Number
+Field Type: Text input
+12) Surveyor Name
+Field Type: Text input
+13) Visit Date
+Field Type: Date picker
+14) ADS (Average Daily Sales) 10 taka Plus (Sticks)
+Field Type: Text input (numeric expected)
+15) ADS (Average Daily Sales) Slim Cigarete (sticks)
+Field Type: Text input (numeric expected)
+16) ADS (Average Daily Sales) Prime Cigarette (sticks)
+Field Type: Text input (numeric expected)
+17) ADS (Average Daily Sales) Mango Cigarete (sticks)
+Field Type: Text input (numeric expected)
+18) Availability (Inventory) – Prime
+Field Type: Text input
+19) Availability (Inventory) – Mango
+Field Type: Text input
+20) Visibility of Prime
+Field Type: Radio button
+Yes
+No
+21) Visibility of Mango
+Field Type: Radio button
+Yes
+No
+22) Retailer Buying Price (RSP) of Prime (BDT per pack)
+Field Type: Text input (numeric)
+23) Retailer Buying Price (RSP) of Mango (BDT per pack)
+Field Type: Text input (numeric)
+24) Selling Price per stick of Prime
+Field Type: Text input
+25) Selling Price per stick of Mango
+Field Type: Text input
+26) Is there Trade Scheme?
+Field Type: Radio button
+Yes
+No
+27) Purchase Time
+Field Type: Radio button
+1
+2
+3
+4
+More
+28) Feedback of Prime
+Field Type: Radio button
+Taste is good
+Design is good
+Price is good
+Taste not Good
+Design not Good
+Price not Good
+29) Feedback of Mango
+Field Type: Radio button
+Taste is good
+Design is good
+Price is good
+Taste not Good
+Design not Good
+Price not Good

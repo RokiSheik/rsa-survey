@@ -30,7 +30,7 @@ $conn->close();
             <?php else: ?>
                 <div class="text-4xl font-extrabold text-green-700 tracking-tighter mb-2">RSA</div>
             <?php endif; ?>
-            <h1 class="text-3xl font-bold text-green-800 text-center uppercase tracking-wider"><?php echo $site_name; ?> Dealer Application Form</h1>
+            <h1 class="text-3xl font-bold text-green-800 text-center uppercase tracking-wider"><?php echo $site_name; ?> Survey Form</h1>
             <div class="w-24 h-1 bg-green-500 mt-4 rounded-full"></div>
         </div>
 
@@ -40,180 +40,193 @@ $conn->close();
                 <!-- 29 Numbered Fields In Order -->
                 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">1. Name of Firm <span class="text-red-500">*</span></label>
-                    <input type="text" name="firm_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">1. Name of Wing <span class="text-red-500">*</span></label>
+                    <input type="text" name="name_of_wing" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">2. Name of Owner <span class="text-red-500">*</span></label>
-                    <input type="text" name="owner_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">2. Name of Division <span class="text-red-500">*</span></label>
+                    <input type="text" name="division_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">3. Personal Cell No. <span class="text-red-500">*</span></label>
-                    <input type="tel" name="personal_phone" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">3. Name of Territory <span class="text-red-500">*</span></label>
+                    <input type="text" name="territory_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">4. Office Cell No.</label>
-                    <input type="tel" name="office_phone" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">4. Name of Zone <span class="text-red-500">*</span></label>
+                    <input type="text" name="zone_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">5. Email Id <span class="text-red-500">*</span></label>
-                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">5. Code of Zone <span class="text-red-500">*</span></label>
+                    <input type="text" name="zone_code" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">6. City / State <span class="text-red-500">*</span></label>
-                    <input type="text" name="city_state" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">6. Route Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="route_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">7. Pin Code <span class="text-red-500">*</span></label>
-                    <input type="text" name="pin_code" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">7. Route Code <span class="text-red-500">*</span></label>
+                    <input type="text" name="route_code" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">8. GST No.</label>
-                    <input type="text" name="gst_no" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">8. Outlet Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="outlet_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">9. PAN No. <span class="text-red-500">*</span></label>
-                    <input type="text" name="pan_no" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">9. Outlet Code <span class="text-red-500">*</span></label>
+                    <input type="text" name="outlet_code" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">10. Educational Qualification</label>
-                    <input type="text" name="educational_qualification" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">10. Retailer Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="retailer_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">11. Nature of Business <span class="text-red-500">*</span></label>
-                    <input type="text" name="nature_of_business" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">11. Retailer Number <span class="text-red-500">*</span></label>
+                    <input type="text" name="retailer_number" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">12. Monthly Sale <span class="text-red-500">*</span></label>
-                    <input type="text" name="monthly_sale" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">12. Surveyor Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="surveyor_name" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">13. Years in Business <span class="text-red-500">*</span></label>
-                    <input type="number" name="years_in_business" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">13. Visit Date <span class="text-red-500">*</span></label>
+                    <input type="date" name="visit_date" required class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">14. No. of Employee</label>
-                    <input type="number" name="no_employee" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">14. ADS (Average Daily Sales) 10 taka Plus (Sticks)</label>
+                    <input type="number" name="ads_10taka_plus" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">15. Do you have any prior experience in similar business?</label>
-                    <div class="flex items-center space-x-6 mt-2">
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="radio" name="prior_experience" value="Yes" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
-                            <span class="text-sm font-semibold text-gray-600">Yes</span>
-                        </label>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="radio" name="prior_experience" value="No" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
-                            <span class="text-sm font-semibold text-gray-600">No</span>
-                        </label>
-                    </div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">15. ADS (Average Daily Sales) Slim Cigarete (sticks)</label>
+                    <input type="number" name="ads_slim_cigarette" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">16. If yes, for how long (duration)?</label>
-                    <input type="text" name="experience_duration" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">16. ADS (Average Daily Sales) Prime Cigarette (sticks)</label>
+                    <input type="number" name="ads_prime_cigarette" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">17. Experience in current field</label>
-                    <input type="text" name="experience" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">17. ADS (Average Daily Sales) Mango Cigarete (sticks)</label>
+                    <input type="number" name="ads_mango_cigarette" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">18. Area you are covering?</label>
-                    <input type="text" name="area_covering" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                    <label class="block text-sm font-bold text-gray-700 mb-2">18. Availability (Inventory) – Prime</label>
+                    <input type="text" name="availability_prime" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">19. Do you have office / godown?</label>
-                    <div class="flex items-center space-x-6 mt-2">
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="radio" name="office_godown" value="Yes" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
-                            <span class="text-sm font-semibold text-gray-600">Yes</span>
-                        </label>
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="radio" name="office_godown" value="No" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
-                            <span class="text-sm font-semibold text-gray-600">No</span>
-                        </label>
-                    </div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">19. Availability (Inventory) – Mango</label>
+                    <input type="text" name="availability_mango" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">20. Mention space of your office/godown? (sq ft)</label>
-                    <input type="text" name="godown_space" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">21. Any other business you are doing?</label>
-                    <input type="text" name="any_other_business" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">22. Monthly Turnover of current business</label>
-                    <input type="text" name="turnover" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">23. Expected Monthly Investment</label>
-                    <input type="text" name="investment_capacity" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-2">24. No. of Sales People</label>
-                        <input type="number" name="sales_staff" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-gray-700 mb-2">25. No. of Service People</label>
-                        <input type="number" name="service_staff" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">26. How did you hear about us?</label>
-                    <select name="hear_about_us" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                        <option value="Google Search">Google Search</option>
-                        <option value="Social Media">Social Media (FB, Inst, etc.)</option>
-                        <option value="Newspaper">Newspaper</option>
-                        <option value="Referral">Referral</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">27. Why are you interested in our dealership?</label>
-                    <textarea name="why_join" rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20"></textarea>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-2">28. Expected date of launch (if awarded)?</label>
-                    <input type="date" name="expected_launch" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-bold text-gray-700 mb-3">29. Which products are you interested in dealing with?</label>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-green-50/30 p-6 rounded-xl border border-green-100">
-                        <?php 
-                        $products = ['Battery', 'Charger', 'E-Rickshaw', 'E-Loader', 'Tyres', 'Spare Parts'];
-                        foreach($products as $prod): 
-                        ?>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">20. Visibility of Prime</label>
+                    <div class="space-y-3 mt-2">
                         <label class="flex items-center space-x-3 cursor-pointer group">
-                            <input type="checkbox" name="product_interest[]" value="<?php echo $prod; ?>" class="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer">
-                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors"><?php echo $prod; ?></span>
+                            <input type="radio" name="visibility_prime" value="Yes" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="visibility_prime" value="No" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">21. Visibility of Mango</label>
+                    <div class="space-y-3 mt-2">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="visibility_mango" value="Yes" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="visibility_mango" value="No" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">22. Retailer Buying Price (RSP) of Prime (BDT per pack)</label>
+                    <input type="number" name="buying_price_prime" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">23. Retailer Buying Price (RSP) of Mango (BDT per pack)</label>
+                    <input type="number" name="buying_price_mango" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">24. Selling Price per stick of Prime</label>
+                    <input type="text" name="selling_price_prime" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">25. Selling Price per stick of Mango</label>
+                    <input type="text" name="selling_price_mango" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all outline-none bg-gray-50/20">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">26. Is there Trade Scheme?</label>
+                    <div class="space-y-3 mt-2">
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="trade_scheme" value="Yes" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">Yes</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="trade_scheme" value="No" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">27. Purchase Time</label>
+                    <div class="space-y-3 mt-2">
+                        <?php foreach(['1', '2', '3', '4', 'More'] as $time): ?>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="purchase_time" value="<?php echo $time; ?>" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors"><?php echo $time; ?></span>
+                        </label>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">28. Feedback of Prime</label>
+                    <div class="space-y-3 mt-2">
+                        <?php foreach(['Taste is good', 'Design is good', 'Price is good', 'Taste not Good', 'Design not Good', 'Price not Good'] as $f): ?>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="feedback_prime" value="<?php echo $f; ?>" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors"><?php echo $f; ?></span>
+                        </label>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">29. Feedback of Mango</label>
+                    <div class="space-y-3 mt-2">
+                        <?php foreach(['Taste is good', 'Design is good', 'Price is good', 'Taste not Good', 'Design not Good', 'Price not Good'] as $f): ?>
+                        <label class="flex items-center space-x-3 cursor-pointer group">
+                            <input type="radio" name="feedback_mango" value="<?php echo $f; ?>" class="w-5 h-5 text-green-600 border-gray-300 focus:ring-green-500 cursor-pointer">
+                            <span class="text-sm font-semibold text-gray-600 group-hover:text-green-700 transition-colors"><?php echo $f; ?></span>
                         </label>
                         <?php endforeach; ?>
                     </div>
@@ -222,7 +235,7 @@ $conn->close();
                 <!-- Submit Button -->
                 <div class="pt-10">
                     <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-black py-5 px-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 text-lg uppercase tracking-widest">
-                        Submit Application
+                        Submit Survey
                     </button>
                     <p class="text-center text-xs text-gray-400 mt-4">By submitting, you agree to our terms and conditions.</p>
                 </div>
