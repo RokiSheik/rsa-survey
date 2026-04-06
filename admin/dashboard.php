@@ -69,14 +69,14 @@ $current_page = 'dashboard';
 
     <!-- Main Content -->
     <main class="flex-1 lg:ml-72 p-6 lg:p-10 min-h-screen">
-        <header class="flex justify-between items-center mb-10">
+        <header class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-start md:items-center mb-10 mt-14 lg:mt-0">
             <div>
-                <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">Good Day, Administrator</h2>
-                <p class="text-slate-500 font-medium mt-1">Here is a quick overview of your system.</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">Good Day, Administrator</h2>
+                <p class="text-slate-500 font-medium mt-1 text-sm md:text-base">Here is a quick overview of your system.</p>
             </div>
-            <div class="flex items-center space-x-4">
-                <div class="bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100 font-medium text-slate-600 flex items-center">
-                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+            <div class="flex items-center space-x-4 w-full md:w-auto">
+                <div class="w-full md:w-auto bg-white px-4 py-2 rounded-xl shadow-sm border border-slate-100 font-medium text-slate-600 flex items-center justify-center">
+                    <span class="w-2 h-2 bg-green-500 rounded-full mr-2 scale-anim"></span>
                     System Online
                 </div>
             </div>
@@ -127,8 +127,8 @@ $current_page = 'dashboard';
         <!-- Quick Info -->
         <div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8">
             <h4 class="text-xl font-bold text-slate-800 mb-6">Latest Configuration</h4>
-            <div class="flex items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                <div class="flex items-center space-x-6">
+            <div class="flex flex-col md:flex-row items-center justify-between p-6 bg-slate-50 rounded-2xl border border-slate-100 space-y-6 md:space-y-0">
+                <div class="flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0 text-center sm:text-left">
                     <div class="w-20 h-20 bg-white rounded-2xl shadow-sm border border-slate-200 flex items-center justify-center overflow-hidden p-2">
                         <?php if ($logo_path): ?>
                             <img src="../<?php echo $logo_path; ?>" class="max-h-full object-contain">
@@ -138,11 +138,11 @@ $current_page = 'dashboard';
                     </div>
                     <div>
                         <p class="text-sm font-bold text-slate-400 uppercase mb-1">Site Title</p>
-                        <h5 class="text-2xl font-bold text-slate-800"><?php echo $site_name; ?></h5>
-                        <p class="text-sm text-slate-500 mt-1">Logo and Site Title are visible on the public application form.</p>
+                        <h5 class="text-xl md:text-2xl font-bold text-slate-800"><?php echo $site_name; ?></h5>
+                        <p class="text-xs md:text-sm text-slate-500 mt-1">Visible on public application form.</p>
                     </div>
                 </div>
-                <a href="settings.php" class="bg-white hover:bg-slate-50 text-slate-800 font-bold py-3 px-6 rounded-xl border border-slate-200 transition-all shadow-sm">
+                <a href="settings.php" class="w-full md:w-auto text-center bg-white hover:bg-slate-50 text-slate-800 font-bold py-3 px-6 rounded-xl border border-slate-200 transition-all shadow-sm">
                     Modify Settings
                 </a>
             </div>

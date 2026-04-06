@@ -91,13 +91,13 @@ while($row = $export_result->fetch_assoc()) {
     </aside>
 
     <main class="flex-1 lg:ml-72 p-6 lg:p-10 min-h-screen transition-all">
-        <header class="flex justify-between items-center mb-10">
+        <header class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-start md:items-center mb-10 mt-14 lg:mt-0">
             <div>
-                <h2 class="text-3xl font-extrabold text-slate-800 tracking-tight">Customer Submissions</h2>
-                <p class="text-slate-500 font-medium mt-1">Review and manage dealership applications.</p>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">Customer Submissions</h2>
+                <p class="text-slate-500 font-medium mt-1 text-sm md:text-base">Review and manage dealership applications.</p>
             </div>
-            <div class="flex items-center space-x-4">
-                <button onclick="exportToExcel()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center space-x-2">
+            <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
+                <button onclick="exportToExcel()" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     <span>Export to Excel</span>
                 </button>
