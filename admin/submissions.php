@@ -94,7 +94,7 @@ while($row = $export_result->fetch_assoc()) {
         <header class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between items-start md:items-center mb-10 mt-14 lg:mt-0">
             <div>
                 <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight">Customer Submissions</h2>
-                <p class="text-slate-500 font-medium mt-1 text-sm md:text-base">Review and manage dealership applications.</p>
+                <p class="text-slate-500 font-medium mt-1 text-sm md:text-base">Review and manage survey submissions.</p>
             </div>
             <div class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4 w-full md:w-auto">
                 <button onclick="exportToExcel()" class="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all flex items-center justify-center space-x-2">
@@ -122,10 +122,10 @@ while($row = $export_result->fetch_assoc()) {
                     <thead>
                         <tr class="bg-slate-50 border-b border-slate-100">
                             <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Date</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Firm Name</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Owner name</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Phone</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">City</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Wing / Div</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Territory</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Outlet</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider">Surveyor</th>
                             <th class="px-6 py-5 text-sm font-bold text-slate-500 uppercase tracking-wider text-right">Actions</th>
                         </tr>
                     </thead>
@@ -137,13 +137,13 @@ while($row = $export_result->fetch_assoc()) {
                                         <div class="text-sm font-semibold text-slate-800"><?php echo date('M d, Y', strtotime($row['created_at'])); ?></div>
                                         <div class="text-xs text-slate-400 font-medium"><?php echo date('h:i A', strtotime($row['created_at'])); ?></div>
                                     </td>
-                                    <td class="px-6 py-5 text-sm font-bold text-slate-700"><?php echo htmlspecialchars($row['firm_name']); ?></td>
-                                    <td class="px-6 py-5 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($row['owner_name']); ?></td>
                                     <td class="px-6 py-5">
-                                        <div class="text-sm font-semibold text-slate-800"><?php echo htmlspecialchars($row['personal_phone']); ?></div>
-                                        <div class="text-xs text-slate-400"><?php echo htmlspecialchars($row['email']); ?></div>
+                                        <div class="text-sm font-bold text-slate-700"><?php echo htmlspecialchars($row['name_of_wing']); ?></div>
+                                        <div class="text-xs text-slate-400"><?php echo htmlspecialchars($row['division_name']); ?></div>
                                     </td>
-                                    <td class="px-6 py-5 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($row['city_state']); ?></td>
+                                    <td class="px-6 py-5 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($row['territory_name']); ?></td>
+                                    <td class="px-6 py-5 font-bold text-slate-800"><?php echo htmlspecialchars($row['outlet_name']); ?></td>
+                                    <td class="px-6 py-5 text-sm font-medium text-slate-600"><?php echo htmlspecialchars($row['surveyor_name']); ?></td>
                                     <td class="px-6 py-5 text-right space-x-2">
                                         <a href="view_submission.php?id=<?php echo $row['id']; ?>" class="inline-flex items-center px-3 py-2 bg-blue-50 text-blue-600 rounded-lg font-bold text-xs hover:bg-blue-600 hover:text-white transition-all">
                                             VIEW
@@ -201,7 +201,7 @@ while($row = $export_result->fetch_assoc()) {
             const worksheet = XLSX.utils.json_to_sheet(data);
             const workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, "Submissions");
-            XLSX.writeFile(workbook, "RSA_Submissions_Export.xlsx");
+            XLSX.writeFile(workbook, "RSA_Survey_Export.xlsx");
         }
     </script>
 </body>

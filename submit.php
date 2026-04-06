@@ -6,29 +6,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO submissions (
-        firm_name, owner_name, personal_phone, office_phone, 
-        email, city_state, pin_code, gst_no, pan_no, 
-        nature_of_business, monthly_sale, years_in_business, 
-        no_employee, experience, existing_brand_dealer, 
-        area_covering, office_godown, any_other_business, 
-        turnover, educational_qualification, prior_experience, 
-        experience_duration, godown_space, investment_capacity, 
-        sales_staff, service_staff, hear_about_us, 
-        why_join, expected_launch, product_interest
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        name_of_wing, division_name, territory_name, zone_name, 
+        zone_code, route_name, route_code, outlet_name, outlet_code, 
+        retailer_name, retailer_number, surveyor_name, visit_date, 
+        ads_10taka_plus, ads_slim_cigarette, ads_prime_cigarette, ads_mango_cigarette, 
+        availability_prime, availability_mango, visibility_prime, 
+        visibility_mango, buying_price_prime, buying_price_mango, 
+        selling_price_prime, selling_price_mango, trade_scheme, 
+        purchase_time, feedback_prime, feedback_mango
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $product_interest = isset($_POST['product_interest']) ? implode(', ', $_POST['product_interest']) : 'None Selected';
-
-    $stmt->bind_param("ssssssssssssssssssssssssssssss", 
-        $_POST['firm_name'], $_POST['owner_name'], $_POST['personal_phone'], $_POST['office_phone'],
-        $_POST['email'], $_POST['city_state'], $_POST['pin_code'], $_POST['gst_no'], $_POST['pan_no'],
-        $_POST['nature_of_business'], $_POST['monthly_sale'], $_POST['years_in_business'],
-        $_POST['no_employee'], $_POST['experience'], $_POST['existing_brand_dealer'],
-        $_POST['area_covering'], $_POST['office_godown'], $_POST['any_other_business'],
-        $_POST['turnover'], $_POST['educational_qualification'], $_POST['prior_experience'],
-        $_POST['experience_duration'], $_POST['godown_space'], $_POST['investment_capacity'],
-        $_POST['sales_staff'], $_POST['service_staff'], $_POST['hear_about_us'],
-        $_POST['why_join'], $_POST['expected_launch'], $product_interest
+    $stmt->bind_param("sssssssssssssssssssssssssssss", 
+        $_POST['name_of_wing'], $_POST['division_name'], $_POST['territory_name'], $_POST['zone_name'],
+        $_POST['zone_code'], $_POST['route_name'], $_POST['route_code'], $_POST['outlet_name'], $_POST['outlet_code'],
+        $_POST['retailer_name'], $_POST['retailer_number'], $_POST['surveyor_name'], $_POST['visit_date'],
+        $_POST['ads_10taka_plus'], $_POST['ads_slim_cigarette'], $_POST['ads_prime_cigarette'], $_POST['ads_mango_cigarette'],
+        $_POST['availability_prime'], $_POST['availability_mango'], $_POST['visibility_prime'],
+        $_POST['visibility_mango'], $_POST['buying_price_prime'], $_POST['buying_price_mango'],
+        $_POST['selling_price_prime'], $_POST['selling_price_mango'], $_POST['trade_scheme'],
+        $_POST['purchase_time'], $_POST['feedback_prime'], $_POST['feedback_mango']
     );
 
     if ($stmt->execute()) {
